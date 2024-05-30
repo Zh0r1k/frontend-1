@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import { getNormalizedGamesDataByCategory } from "./api-utils";
+import { useEffect, useState } from 'react'
+import { getNormalizedGamesDataByCategory } from './api-utils'
 
 export const useGetDataByCategory = (endpoint, category) => {
-  const [data, setData] = useState(null);
-
+  const [data, setData] = useState(null)
   useEffect(() => {
     async function fetchData() {
-      const data = await getNormalizedGamesDataByCategory(endpoint, category);
-      setData(data);
+      const data = await getNormalizedGamesDataByCategory(endpoint, category)
+      setData(data)
     }
-    fetchData();
-  }, [endpoint, category]);
-  console.log(data);
-  return data;
-};
+    fetchData()
+  }, [])
+  return data
+}
